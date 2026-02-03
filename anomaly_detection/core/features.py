@@ -1,6 +1,6 @@
 import pandas as pd
 
-def build_features(series: pd.DataFrame, window: int = 60) -> pd.DataFrame:
+def build_features(series: pd.DataFrame, window: int = 30) -> pd.DataFrame:
     feat_df = pd.DataFrame({
         "value": series,
     })
@@ -10,4 +10,5 @@ def build_features(series: pd.DataFrame, window: int = 60) -> pd.DataFrame:
     feat_df["roll_min"]   = series.rolling(window).min()
     feat_df["roll_max"]   = series.rolling(window).max()
 
-    return feat_df.dropna().copy()
+    df =  feat_df.dropna().copy()
+    return df

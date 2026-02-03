@@ -17,7 +17,7 @@ def rolling_zscore(
     return z_scores, anomalies
 
 
-class IsoForestDetector:
+class IsolationForestModel:
     def __init__(self, n_estimators: int = 200, contamination: str = "auto", random_state: int = 42) -> None:
         self.model = IsolationForest(
             n_estimators=n_estimators,
